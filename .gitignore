@@ -8,3 +8,4 @@ t
 **/*.weights
 test.py
 .idea/*
+./data/show/t*

@@ -1,1 +1,1 @@
-[Train your own weight with YOLOv3](https://pjreddie.com/darknet/)
+[Train your own weight with YOLOv3 and input here](https://pjreddie.com/darknet/)

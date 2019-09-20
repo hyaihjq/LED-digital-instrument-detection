@@ -32,7 +32,6 @@ class detection:
         self.classes = load_classes(self.classes_cfg)
         self.colors = pkl.load(open("pallete", "rb"))
 
-
     def prepare(self, loaded_ims=False, imlist=False):
         if not imlist:
             # Detection phase
@@ -53,7 +52,6 @@ class detection:
         else:
             print('load_ims')
         return loaded_ims, imlist
-
 
     def detect(self, loaded_ims, imlist):
         CUDA = torch.cuda.is_available()
@@ -99,7 +97,6 @@ class detection:
 
             prediction = write_results(prediction, self.confidence, self.num_classes, nms_conf=self.nms_thresh)
 
-
             #if type(prediction) == int:
 
             #   for im_num, image in enumerate(imlist[i * self.bs: min((i + 1) * self.bse, len(imlist))]):
@@ -126,12 +123,9 @@ class detection:
             exit()
 
         im_dim_list = torch.index_select(im_dim_list, 0, output[:, 0].long())
-
         scaling_factor = torch.min(int(self.reso) / im_dim_list, 1)[0].view(-1, 1)
-
         output[:, [1, 3]] -= (inp_dim - scaling_factor * im_dim_list[:, 0].view(-1, 1)) / 2
         output[:, [2, 4]] -= (inp_dim - scaling_factor * im_dim_list[:, 1].view(-1, 1)) / 2
-
         output[:, 1:5] /= scaling_factor
 
         for i in range(output.shape[0]):

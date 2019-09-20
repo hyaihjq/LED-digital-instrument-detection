@@ -1,0 +1,19 @@
+---
+# Image / Directory containing images to perform detection upon
+- images = 'imgs/test'
+# Image / Directory to store detections to
+- det = 'save'
+# Batch size
+- bs = 1
+# Object Confidence to filter predictions
+- confidence = 0.5
+# NMS Threshhold
+- nms_thresh = 0.4
+# Config file
+- cfgfile = 'cfg/yolov3-voc.cfg'
+# weights file
+- weights = 'yolov3-voc_final.weights'  # 'yolov3.weights'
+# Input resolution of the network. Increase to increase accuracy. Decrease to increase speed
+- reso = 608
+- num_classes = 12
+- classes_cfg = 'data/voc.names'

@@ -1,0 +1,10 @@
+data2/*
+!data/led/*
+imgs/*
+Object-Detection-Metrics
+__pycache__
+save
+t
+**/*.weights
+test.py
+.idea/*
